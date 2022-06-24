@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html><head>
+</head>
+<body style="color: #494c4e;">
+<html><head></head><body><p></p>
+<p style="margin: 0in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px; font-family: 'times new roman', times, serif;">This HW is divided into 3 parts.<span style="color: red;">&nbsp; </span>For Parts B &amp; C, please download the schema and dataset provided. Create the database on Oracle server using SQLDeveloper, and then write the queries for each part. Your queries must work for arbitrary data, not just the provided data. </span></p>
+<p style="margin: 0in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px; font-family: 'times new roman', times, serif;">&nbsp;</span></p>
+<p style="margin: 0in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-family: 'times new roman', times, serif; font-size: 19px;"><b>Submission instructions:</b> For each Part submit a Part-X.sql file and a Part-X.pdf file, where X = A, B, C. Part-X.sql contains all your SQL queries. In Part-X.pdf copy/paste screenshots of each query and its answer from SQLDeveloper. In total you shall be submitting 4 files. </span></p>
+<p style="margin: 0in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px; font-family: 'times new roman', times, serif;"><span style="color: #cc0000;">Screenshots instructions are <a href="http://facsrv.cs.depaul.edu/~tmalik1/teaching/csc453/Resources/Screenshot.pdf" style="color: #cc0000; text-decoration: underline;">here</a>. If you do not follow screenshot instructions , 40% of your HW points are going to be deducted. We need the history of commands run.</span></span></p>
+<p style="margin: 0in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px; font-family: 'times new roman', times, serif;"></span></p>
+<p><span style="font-family: 'times new roman', times, serif; font-size: 19px;"><span style="color: #000000;"><b>Part A. (20 points)</b></span><span style="color: #000000;"></span></span></p>
+<p><span style="font-family: 'times new roman', times, serif; font-size: 19px;"><span style="color: #000000;">Lets say we have two relations of the form:</span><span style="color: #000000;"></span></span></p>
+<div title="Page 259">
+<div>
+<div>
+<p><span style="font-family: 'times new roman', times, serif; color: #000000; font-size: 19px;">R(A,B) = {(0,1),(2,3),(0,1),(2,4),(3,4)}</span></p>
+<p><span style="font-family: 'times new roman', times, serif; color: #000000; font-size: 19px;">S(B,C) = {(0,1),(2,4),(2,5),(3,4),(0,2),(3,4)}</span></p>
+<p><span style="font-family: 'times new roman', times, serif; color: #000000; font-size: 19px;">Write SQL queries which do the following:</span></p>
+<p><span style="font-family: 'times new roman', times, serif; color: #000000; font-size: 19px;">(i) [2pts] Finds A+B on R.</span></p>
+<p><span style="font-family: 'times new roman', times, serif; color: #000000; font-size: 19px;">(ii) [2pts] Sorts R based on B,A.</span></p>
+<p><span style="font-family: 'times new roman', times, serif; color: #000000; font-size: 19px;">(iii) [2pts] Turns R from a bag to a set.</span></p>
+<p><span style="font-family: 'times new roman', times, serif; color: #000000; font-size: 19px;">(iv) [2pts] Computes the sum of B for each A value in R.</span></p>
+<p><span style="font-family: 'times new roman', times, serif; color: #000000; font-size: 19px;">(v) [4pts] Joins R and S and computes the max value of C for each A.</span></p>
+<p><span style="font-family: 'times new roman', times, serif; color: #000000; font-size: 19px;">(vi) [2pts] Finds tuples of R which match and unmatch with S.</span></p>
+<p><span style="font-family: 'times new roman', times, serif; color: #000000; font-size: 19px;">(vii) [2pts] Finds tuples of S which match and unmatch with R.</span></p>
+<p><span style="font-family: 'times new roman', times, serif; color: #000000; font-size: 19px;">(viii) [4pts] Finds tuples of R which match and unmatch with S but in which R.B is less than S.B.</span></p>
+<p><span style="color: #000000; font-size: 19px;"><span style="font-family: 'times new roman', times, serif;">Write the queries first, without creating the tables in SQLDeveloper. </span><span style="font-family: 'times new roman', times, serif;">Then create the tables in the database and check how many queries were correctly written. </span></span></p>
+<p><span style="font-family: 'times new roman', times, serif; font-size: 16px;">&nbsp; <b></b><span style="color: red;">Submit A.sql consisting of all SQL statements, and A.pdf consisting of screenshots of queries and results. Not following screenshot instructions will result in loss of points. </span></span></p>
+</div>
+</div>
+</div>
+<p style="margin: 0in 0in 12pt; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="color: red; font-size: 16px;"></span></p>
+<p style="margin: 0in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px;"><b>Part B. (15 points)</b></span></p>
+<p style="margin: 0in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px;">Dataset: Restaurants (Provided in D2L/Homeworks)</span></p>
+<p style="margin: 0in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px;">The schema is as follows:</span></p>
+<table class="MsoNormalTable" style="background: #F4F4F4; border-top: outset; border-left: outset; border-bottom: inset; border-right: inset; border-width: 1.0pt;" cellpadding="0" border="1">
+<tbody>
+<tr style="height: 19.2pt;">
+<td rowspan="3" style="width: 75.0pt; border: solid windowtext 1.0pt; border-bottom: outset 1.0pt; padding: .75pt 6.0pt .75pt 6.0pt;" valign="top">
+<p style="margin: 0in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px; font-family: Times; color: black;">Restaurants</span></p>
+</td>
+<td style="border: solid windowtext 1.0pt; padding: .75pt 6.0pt .75pt 6.0pt;">
+<p style="margin: 0in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px; font-family: Times; color: black;">restaurant</span></p>
+</td>
+<td style="border: solid windowtext 1.0pt; padding: .75pt 6.0pt .75pt 6.0pt;">
+<p style="margin: 0in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px; font-family: Times; color: black;">rID, name, address, cuisine</span></p>
+</td>
+</tr>
+<tr style="height: 19.2pt;">
+<td style="border: solid windowtext 1.0pt; padding: .75pt 6.0pt .75pt 6.0pt;">
+<p style="margin: 0in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px; font-family: Times; color: black;">reviewer</span></p>
+</td>
+<td style="width: 185.95pt; border: solid windowtext 1.0pt; padding: .75pt 6.0pt .75pt 6.0pt;">
+<p style="margin: 0in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px; font-family: Times; color: black;">vID, name</span></p>
+</td>
+</tr>
+<tr style="height: 8.6pt;">
+<td style="border: solid windowtext 1.0pt; padding: .75pt 6.0pt .75pt 6.0pt;">
+<p style="margin: 0in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px; font-family: Times; color: black;">rating</span></p>
+</td>
+<td style="width: 185.95pt; border: solid windowtext 1.0pt; padding: .75pt 6.0pt .75pt 6.0pt;">
+<p style="margin: 0in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px; font-family: Times; color: black;">vID, rID, stars, ratingdate</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="margin: 0in; font-size: 12pt; font-family: 'Times New Roman', serif;"></p>
+<p style="margin: 0in 0in 0in 0.25in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px;"><b>[SQL-SingleTable]</b></span></p>
+<ol style="margin-bottom: 0in; margin-top: 0px;">
+<li style="margin: 0in 0in 0in 0px; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px;">[1pt] Find the name of all restaurants offering Indian cuisine</span></li>
+<li style="margin: 0in 0in 0in 0px; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px;"><span style="font-family: 'times new roman', times, serif; font-size: 19px;">[2pt] Find restaurants which have a 'street' in their address. </span></span><span style="font-size: 19px;"><span style="font-family: 'times new roman', times, serif; font-size: 19px;"></span></span><span style="font-size: 19px;"><span style="font-family: 'times new roman', times, serif; font-size: 19px;"></span></span></li>
+</ol>
+<p style="margin: 0in 0in 0in 0.25in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px;"><b>[SQL-Join]</b></span></p>
+<ol style="margin-bottom: 0in; margin-top: 0px;" start="2">
+<li style="margin: 0in 0in 0in 0px; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px;">[2pt] Find restaurant names that received a rating of 4 or 5, sort them in increasing order of rating. </span></li>
+<li style="margin: 0in 0in 0in 0px; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px;">[2pt] Find the names of all restaurants that have no rating.</span></li>
+<li style="margin: 0in 0in 0in 0px; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px;">[2pt] Some reviewers didn't provide a date with their rating. Find the names of all reviewers who have ratings with a NULL value for the date. </span></li>
+</ol>
+<p><span style="font-size: 19px; font-family: 'times new roman', times, serif;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Note: Checking for NULL is performed with "&lt;attribute_name&gt; IS NULL" condition and not&nbsp; "&lt;attribute_name&gt; = NULL"</span></p>
+<p><span style="font-family: 'times new roman', times, serif; font-size: 19px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5. [3pt] For all cases where the same reviewer rated the same restaurant more than once and gave it a higher rating the second time, return the reviewer's name and the name of the restaurant.</span><span style="font-family: 'times new roman', times, serif; font-size: 19px;"></span></p>
+<p><span style="font-family: 'times new roman', times, serif; font-size: 19px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6. [3pt] Find reviewers with no ratings. </span></p>
+<p><span style="font-size: 19px;"><span style="font-family: 'times new roman', times, serif;">&nbsp;&nbsp;&nbsp; </span><b></b><span style="color: red;">Submit B.sql consisting of all SQL statements, and B.pdf consisting of screenshots of queries and results. Not following screenshot instructions will result in loss of points. </span></span></p>
+<p></p>
+<p style="margin: 0in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px;"><b>Part C. </b>&nbsp;<b>(20 points)</b></span></p>
+<p style="margin: 0in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px;">Dataset: Trips</span></p>
+<p style="margin: 0in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px;">The schema is as follows:</span></p>
+<table class="MsoNormalTable" style="background: #f4f4f4 none repeat scroll 0% 0%; border-color: currentcolor; border-style: outset inset inset outset; border-width: 1pt;" cellpadding="0" border="1">
+<tbody>
+<tr style="height: 19.2pt;">
+<td rowspan="4" style="width: 75pt; border-color: windowtext windowtext currentcolor; border-style: solid solid outset; border-width: 1pt; border-image: none 100% / 1 / 0 stretch; padding: 0.75pt 6pt;" valign="top">
+<p style="margin: 0in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="color: black; font-size: 19px;">Trips</span></p>
+</td>
+<td style="border: 1pt solid windowtext; padding: 0.75pt 6pt;">
+<p style="margin: 0in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="color: black; font-size: 19px;">Trips</span></p>
+</td>
+<td style="width: 302.85pt; border: 1pt solid windowtext; padding: 0.75pt 6pt;">
+<p style="margin: 0in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="color: black; font-size: 19px;">TID, TripState, TravelMode, Fare</span></p>
+</td>
+</tr>
+<tr style="height: 21.9pt;">
+<td style="border: 1pt solid windowtext; padding: 0.75pt 6pt;">
+<p style="margin: 0in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="color: black; font-size: 19px;">ByCar</span></p>
+</td>
+<td style="width: 302.85pt; border: 1pt solid windowtext; padding: 0.75pt 6pt;">
+<p style="margin: 0in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="color: black; font-size: 19px;">TID, Rental Company, Mileage</span></p>
+</td>
+</tr>
+<tr style="height: 8.6pt;">
+<td style="border: 1pt solid windowtext; padding: 0.75pt 6pt;">
+<p style="margin: 0in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="color: black; font-size: 19px;">ByTrain</span></p>
+</td>
+<td style="width: 302.85pt; border: 1pt solid windowtext; padding: 0.75pt 6pt;">
+<p style="margin: 0in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="color: black; font-size: 19px;">TID, Type, Coach, TrainSpeed, NumberofStops</span></p>
+</td>
+</tr>
+<tr style="height: 8.6pt;">
+<td style="border: 1pt solid windowtext; padding: 0.75pt 6pt;">
+<p style="margin: 0in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="color: black; font-size: 19px;">ByPlane</span></p>
+</td>
+<td style="width: 302.85pt; border: 1pt solid windowtext; padding: 0.75pt 6pt;">
+<p style="margin: 0in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="color: black; font-size: 19px;">TID, Airline, Class, LayoverTime</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="margin: 0in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px;">&nbsp;</span></p>
+<p style="margin: 0in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px;">The Trips table stores information about trips taken by various modes of travel and their respective fares. Each trip, owing to its mode has some relevant information specific to the mode. For instance, a car trip has the rental company and the mileage, whereas train trip is characterized by the trainspeed, type, coach, and number of stops. The TravelCompany is interested in answering the following queries.</span></p>
+<p style="margin: 0in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px;">&nbsp;</span></p>
+<p style="margin: 0in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px; font-family: 'times new roman', times, serif;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>[SQL-SingleTable]</b></span></p>
+<ol style="margin-bottom: 12pt; margin-top: 0px;">
+<li style="margin: 0in 0in 12pt 0px; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px; font-family: 'times new roman', times, serif;"><span style="color: black;">[1pt] </span>List car rental companies which have a mileage of at least 27 miles/gallon.  </span></li>
+<li style="margin: 0in 0in 12pt 0px; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px; font-family: 'times new roman', times, serif;"><span style="color: black;">[1pt] </span>List trip IDs taken on train costing strictly more than $150.  </span></li>
+<li style="margin: 0in 0in 12pt 0px; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px; font-family: 'times new roman', times, serif;"><span style="color: black;">[1pt] </span>Find trip IDs and their fare that are not taken in the US i.e., `Non-US` trips.</span></li>
+<li style="margin: 0in 0in 12pt 0px; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px; font-family: 'times new roman', times, serif;">[2pt]&nbsp;Find the cheapest trip taken by each of&nbsp;air, rail, or car.</span></li>
+</ol>
+<p style="margin: 0in 0in 12pt 0.5in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px; font-family: 'times new roman', times, serif;"><b>[SQL-Join] </b></span></p>
+<p><span style="font-size: 19px; font-family: 'times new roman', times, serif;"><span style="color: black;">&nbsp;&nbsp;&nbsp;<span style="font-size: 19px;">&nbsp; 5. [1pt] </span></span>Find the business class plane trip IDs that are greater than $1000.  </span></p>
+<p><span style="font-size: 19px; font-family: 'times new roman', times, serif;"><span style="color: black;">&nbsp;&nbsp;&nbsp;&nbsp; 6. [2pt] </span>Find any car trip more expensive than a trip taken on a train in the same state or outside the country.</span></p>
+<p><span style="font-size: 19px; font-family: 'times new roman', times, serif;"><span style="color: black;">&nbsp;&nbsp;&nbsp;&nbsp; 7. [2pt] </span>List pairs of distinct car trips that have exactly the same value of mileage.  </span></p>
+<p style="margin: 0in 0in 0in 0.5in; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px; font-family: 'times new roman', times, serif;"><b>Note a pair of distinct trips is of the format: (TID1, TID2).</b></span></p>
+<p style="margin: 0in 0in 12pt; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px; font-family: 'times new roman', times, serif;"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This distinct pair is not the same as the pair (TID2, TID1)</b></span></p>
+<p style="margin: 0in 0in 12pt; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px; font-family: 'times new roman', times, serif;"><span style="color: black;">&nbsp;&nbsp;&nbsp;&nbsp; 8. [3pt] </span>List pairs of distinct train trips that in which the speed of the first train trip is lower than the speed of the second train trip.  </span></p>
+<p style="margin: 0in 0in 12pt; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px; font-family: 'times new roman', times, serif;"><span style="color: black;">&nbsp;&nbsp;&nbsp;&nbsp; 9. [3pt] </span>Find those pair of trips which occur in the same state and with the same mode of travel. List such pairs only once. In other words, given a pair (TID1,TID2) do NOT list (TID2,TID1).</span></p>
+<p style="margin: 0in 0in 12pt; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 19px; font-family: 'times new roman', times, serif;"><span style="color: black;">&nbsp;&nbsp;&nbsp; 10. [4pt] </span>Find a state in which trips have been taken by all three modes of transportation:  train, plane, and car. Note: Think 3-way self-joins with equality and non-equality join criteria.</span></p>
+<p style="margin: 0in 0in 12pt; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="color: red; font-size: 19px;">Submit C.sql consisting of all SQL statements, and C.pdf consisting of screenshots of queries and results. Not following screenshot instructions will result in loss of points. </span></p>
+<p></p>
+<p></p>
+<p></p></body></html>
+</body></html>
